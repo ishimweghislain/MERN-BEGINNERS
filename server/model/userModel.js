@@ -14,7 +14,9 @@ const userSchema = new mongoose.Schema({
   address:{
     type: String,
     required: true
-  }
+  },
+
+  
 })
 
 export default mongoose.model("Users", userSchema);

@@ -1,0 +1,13 @@
+npm i cors
+npm i express
+npm i body-parser
+npm i mongoose
+npm i dotenv
+
+// That is for backend side
+
+npm i axios
+npm i react-router-dom
+npm i react-hot-toast 
+npm i bootsrap
+npm i font-awesome-icons
