@@ -28,7 +28,7 @@ const AddUser = () => {
       await axios.post("http://localhost:8000/api/user", user)
       .then((response)=>{
         toast.success(response.data.message, {position:"top-right"})
-        navigate("/")
+        navigate("/get")
       })
 
       .catch((error)=>{
@@ -36,8 +36,13 @@ const AddUser = () => {
       })
   }
   return (
+    
+    
     <div className='addUser'>
-        <Link to="/" type='button' className='btn btn-secondary'> <i class="fa-solid fa-backward"></i> Back </Link>
+      <div className='userButtons'>
+        <Link to="/getuser" type='button' className='btn btn-secondary'> <i class="fa-solid fa-backward"></i> Back </Link>
+         <Link to="/" type='button' className='btn btn-danger'> <i class="fa-solid fa-backward"></i> Logout | </Link>
+         </div>
         <h3>Add a New User</h3>
         <form onSubmit={submitForm} className='addUserForm'>
             <div className='inputGroup'>

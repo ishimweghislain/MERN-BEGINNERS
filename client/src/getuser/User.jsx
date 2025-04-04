@@ -9,7 +9,7 @@ const User = () => {
   const [users, setUsers] = useState([])
   useEffect(() =>{
     const fetchData = async()=> {
-
+       
       try {
 
         const response = await axios.get("http://localhost:8000/api/users")
@@ -40,9 +40,13 @@ const User = () => {
 
   return (
    <div className='userTable'>
+     <div className='userButtons'>
     <Link to="/add" type='button' className='btn btn-primary'>
       Add User <i class="fa-solid fa-user-plus"></i>
     </Link>
+   
+       <Link to="/" type='button' className='btn btn-danger'> <i class="fa-solid fa-backward"></i> Logout | </Link>
+    </div>
     {users.length === 0?(
       <div className='noUser'>
         <h1>No Users Found in Database</h1>

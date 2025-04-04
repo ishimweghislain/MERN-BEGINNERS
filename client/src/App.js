@@ -1,31 +1,34 @@
-
 import AddUser from './adduser/AddUser';
 import './App.css';
 import User from './getuser/User';
-
-import {createBrowserRouter,  RouterProvider } from "react-router-dom";
 import UpdateUser from './updateuser/UpdateUser';
+import AdminLogin from './AdminLogin';
+
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 function App() {
-
   const route = createBrowserRouter([
     {
-      path:"/",
-      element:<User />,
+      path: "/",
+      element: <AdminLogin />,
     },
     {
-      path:"/add",
-      element:<AddUser />,
+      path: "/getuser",
+      element: <User />,
     },
     {
-      path:"/update/:id",
-      element:<UpdateUser />,
-    }
-   
-])
+      path: "/add",
+      element: <AddUser />,
+    },
+    {
+      path: "/update/:id",
+      element: <UpdateUser />,
+    },
+  ]);
+
   return (
     <div className="App">
-     <RouterProvider router={route}></RouterProvider>
+      <RouterProvider router={route}></RouterProvider>
     </div>
   );
 }
